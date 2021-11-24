@@ -23,6 +23,10 @@ const char * set_lst(char input_lst[]){
 
   // set_temp is given a fixed array size of ::length of input_lst + 1:: the maximum size a set can be is the same size as the input, the set of "abcdef" is still "abcdef" ... the +1 is given so that the array has space for the null character '\0' 
   char *set_temp = malloc((length + 1) * sizeof(char));
+  // flags a failure if the memory hasn't been assigned properly. 
+  if (set_temp == NULL){
+    return "memory failed to assign to set_temp";
+  }
   // when a value is stored in set_temp, set_temp_indexes increases by 1 so that each item stored is in the next index avaliable.
   int set_temp_indexes = 0;
   // used to track how many matches of a char there are between the input_lst and the set_lst
@@ -49,7 +53,6 @@ const char * set_lst(char input_lst[]){
     match_counter = 0;
   }
   // printf("\n%s", set_temp); 
-  
   // as set_temp is a local variable 
   char *processed_lst = set_temp;
   return processed_lst;
