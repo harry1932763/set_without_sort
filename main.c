@@ -17,8 +17,7 @@ int main(void) {
     return -1;
   }
   strcpy(result, set_lst(input_sentence));
-  printf("%s", result);
-
+  printf("%s\n", result);
   // this frees the memory which "result" points at which is the same memory returned from set_lst(input_sentence) 
   free(result);
   *result = '\0';
@@ -50,7 +49,7 @@ const char * set_lst(char input_lst[]){
     // printf("%d", i);
     for (int j = 0; j < length; j++){
       
-        // this compares every index of the input_lst and set_temp, if they match then the match counter is incremented.
+        // this compares every index of the input_lst and set_temp, if they match then the match_ counter is incremented.
     if (input_lst[i] == set_temp[j]){
       match_counter++;
       }
